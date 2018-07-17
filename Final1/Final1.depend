@@ -1,0 +1,131 @@
+# depslib dependency file v1.0
+1529935273 source:c:\eli\utn\practica finales labi\final1\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1529935273 c:\eli\utn\practica finales labi\final1\arraylist.h
+
+1531761536 source:c:\eli\utn\practica finales labi\final1\datamanager.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"Producto.h"
+	"DataManager.h"
+
+1531761664 source:c:\eli\utn\practica finales labi\final1\producto.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"Producto.h"
+	"DataManager.h"
+
+1529935273 source:c:\eli\utn\practica finales labi\final1\tools.c
+	<stdio.h>
+	<stdlib.h>
+
+1531758117 source:c:\eli\utn\practica finales labi\final1\validaciones.c
+
+1531763794 source:c:\eli\utn\practica finales labi\final1\vista.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"Controlador.h"
+	"DataManager.h"
+	"Producto.h"
+
+1531762461 source:c:\eli\utn\practica finales labi\final1\controlador.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"Controlador.h"
+
+1531762608 source:c:\eli\utn\practica finales labi\final1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Controlador.h"
+	"Vista.h"
+	"Validaciones.h"
+	"ArrayList.h"
+
+1531762039 c:\eli\utn\practica finales labi\final1\controlador.h
+
+1531763778 c:\eli\utn\practica finales labi\final1\vista.h
+	"ArrayList.h"
+	"Producto.h"
+
+1531758117 c:\eli\utn\practica finales labi\final1\validaciones.h
+
+1531763742 c:\eli\utn\practica finales labi\final1\producto.h
+	"ArrayList.h"
+
+1531760890 c:\eli\utn\practica finales labi\final1\datamanager.h
+
+1529935274 source:c:\eli\utn\practica finales laboi\finales labo1\final1\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1529935274 c:\eli\utn\practica finales laboi\finales labo1\final1\arraylist.h
+
+1531761538 source:c:\eli\utn\practica finales laboi\finales labo1\final1\datamanager.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"Producto.h"
+	"DataManager.h"
+
+1531763744 c:\eli\utn\practica finales laboi\finales labo1\final1\producto.h
+	"ArrayList.h"
+
+1531760892 c:\eli\utn\practica finales laboi\finales labo1\final1\datamanager.h
+
+1531761666 source:c:\eli\utn\practica finales laboi\finales labo1\final1\producto.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"Producto.h"
+	"DataManager.h"
+
+1531779150 source:c:\eli\utn\practica finales laboi\finales labo1\final1\vista.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"Controlador.h"
+	"DataManager.h"
+	"Producto.h"
+
+1531777895 c:\eli\utn\practica finales laboi\finales labo1\final1\controlador.h
+
+1531777895 source:c:\eli\utn\practica finales laboi\finales labo1\final1\controlador.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"Controlador.h"
+
+1531778770 source:c:\eli\utn\practica finales laboi\finales labo1\final1\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"Producto.h"
+	"DataManager.h"
+	"Validaciones.h"
+
+1531758118 c:\eli\utn\practica finales laboi\finales labo1\final1\validaciones.h
+
+1531787874 source:c:\eli\utn\practica finales laboi\finales labo1\final1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Controlador.h"
+	"Vista.h"
+	"Validaciones.h"
+	"ArrayList.h"
+
+1531763780 c:\eli\utn\practica finales laboi\finales labo1\final1\vista.h
+	"ArrayList.h"
+	"Producto.h"
+
