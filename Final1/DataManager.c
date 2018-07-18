@@ -46,3 +46,33 @@ eProducto* nuevo(void)
     returnAux = (eProducto*)malloc(sizeof(eProducto));
     return returnAux;
 }
+int data_actualizarArchivo(ArrayList* this,char* nom_archivo)
+{
+    int retorno=-1;
+    FILE* pArch;
+    eProducto* prod=NULL;
+    int i;
+    if(nom_archivo!=NULL)
+    {
+        pArch=fopen(nom_archivo,"w");
+        if(pArch!=NULL)
+        {
+            retorno=0;
+            for(i=0;i<this->len(this);i++)
+            {
+                prod=this->get(this,i);
+                if(prod!=NULL)
+                {
+                    fprintf(pArch,prod_get_id(prod),prod_get_descripcion(prod),prod_get_cantidad(prod));
+                }//fin if(prod)
+                else
+                {
+                    retorno=-2;
+                }
+            }//fin for
+        }//if(pArch)
+
+    }//fin if(nom_archivo)
+    fclose(pArch);
+
+}

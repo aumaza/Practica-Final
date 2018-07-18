@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "ArrayList.h"
 #include "Controlador.h"
 #include "DataManager.h"
@@ -16,13 +17,18 @@ void ShowMenu(char *opcion)
     printf("\n0.  Salir \n");
 }
 
+void vista_ShowTitulo(char titulo[])
+{
+    printf("%s----\n\n",titulo);
+}
+
 int vista_Muestra1UnElemento(eProducto * emp)
 {
     int retorno=-1;
     if(emp !=NULL)
     {
         retorno=0;
-        printf("%d\t%s\t%d\n",prod_get_id(emp),prod_get_descripcion(emp),prod_get_cantidad(emp));
+        printf("%02d\t\t%10s\t\t%2d\n",prod_get_id(emp),emp->descrip/*prod_get_descripcion(emp)*/,prod_get_cantidad(emp));
 
     }
     return retorno;
@@ -35,6 +41,8 @@ void vista_MostrarElementos(ArrayList *this,char *Titulo,int desde, int hasta)
     {
         system("cls");
         printf("\n\n--------%s  --------\n",Titulo);
+        printf("\n\nCod Producto\tDescripcion\tCantidad\n");
+
         if(this->isEmpty(this)==0)
         {//No esta vacio
             for(i=desde;i<hasta;i++)
@@ -49,4 +57,20 @@ void vista_MostrarElementos(ArrayList *this,char *Titulo,int desde, int hasta)
             system("pause");
         }
     }
+}
+int vista_Pedir_Deposito(int choice)
+{
+    int retorno=0;
+    system("cls");
+    vista_ShowTitulo("\n\t\tMOVER PRODUCTOS ENTRE DEPOSITOS\n");
+    choice:Valida_PedirEntero("Ingrese el Nro de deposito origen (0/1):\n");//se puede pasar por parametro del main??
+    if(choice ==0 || choice==1)
+    {
+        retorno=choice;
+    }
+    else
+    {
+        printf("Debe ingresar una opcion valida (0/1)");
+    }
+    return retorno;
 }

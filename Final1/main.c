@@ -5,6 +5,7 @@
 #include "Vista.h"
 #include "Validaciones.h"
 #include "ArrayList.h"
+#include "DataManager.h"
 #define NOM_ARCH "dep0.csv"
 #define NOM_ARCH2 "dep1.csv"
 #define TAMAÑO 5
@@ -12,8 +13,10 @@
 int main()
 {
     char seguir='S';
+    char resp;
     int opcion;
-   // int retorno=0;
+    int origen,destino,id;
+    eProducto prod;
     ArrayList *ListaDep0;
     ArrayList *ListaDep1;
     ListaDep0=al_newArrayList();
@@ -39,7 +42,8 @@ int main()
                  case 1:
                     if(ListaDep0 !=NULL)
                     {
-                        vista_MostrarElementos(ListaDep0,"Listado productos Deposito 0",0,5);
+                        vista_MostrarElementos(ListaDep0,"Listado productos Deposito 0",0,ListaDep0->len(ListaDep0));
+                        system("pause");
                     }
                     else
                         printf("No hay productos\n");
@@ -47,11 +51,35 @@ int main()
                     break;
                  case 2:
                     vista_MostrarElementos(ListaDep1,"Listado productos Deposito 1",0,ListaDep1->len(ListaDep1));
+                    system("pause");
                     break;
                  }
 
                 break;
             case 3:
+                switch(vista_Pedir_Deposito(origen))
+                {
+                case 0:
+                    vista_MostrarElementos(ListaDep0,"Productos Deposito Nro 0",0,ListaDep0->len(ListaDep0));
+                    system("pause");
+                    opcion=Valida_PedirEntero("Ingrese el codigo del producto a mover\n");
+                    id=prod_buscarId(ListaDep0,opcion);
+                    vista_Muestra1UnElemento(al_get(ListaDep0,id));
+                   // system("pause");
+                    resp=Valida_confirmacion("Desea mover este producto? (S/N)");
+                    //system("pause");
+                    if(resp=='S')
+                    {
+                        prod_mover(ListaDep0,ListaDep1,id);
+                        data_actualizarArchivo(ListaDep1,NOM_ARCH2);
+                    }
+
+                    break;
+                case 1:
+                    break;
+
+                }
+
                 break;
             case 4:
                 break;

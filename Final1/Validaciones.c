@@ -22,3 +22,12 @@ int Valida_PedirEntero(char mensaje[])
     }while(scanf("%d",&auxiliar)==0);
     return auxiliar;
 }
+char Valida_confirmacion(char mensaje[])
+{
+    char retorno='N';
+    printf("%s\n",mensaje);
+    scanf("%c",&retorno);
+    retorno=toupper(retorno);
+    system("pause");
+    return retorno;
+}

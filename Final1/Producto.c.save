@@ -14,13 +14,16 @@ int parserProducto(FILE* pFile, ArrayList* this)
     int retorno = -1;
     int cantidadFilasLeidas = 0;
     int cantidadDatosLeidos;
-    char cabecera[50];
+    char cabecera[80];
     int guardoDato;
 
     eProducto* record;
+
+    //char Nombre[20];
     char Id[2];
     char descrip[25];
     char canti[2];
+   // char horas[10];
 
     if(pFile != NULL)
     {
@@ -28,7 +31,7 @@ int parserProducto(FILE* pFile, ArrayList* this)
         if(ENCABEZADO == 1)
         {
             //descarto la lectura del encabezado
-            fgets(cabecera, 50, pFile);
+            fgets(cabecera, 80, pFile);
         }
 
         while(!feof(pFile))
@@ -55,7 +58,8 @@ int parserProducto(FILE* pFile, ArrayList* this)
                     {
                         break;
                     }
-
+               //     guardoDato = Empleado_setSueldo(record, charToFloat(sueldo) );
+                //    guardoDato = Empleado_setHoras(record, charToint(horas) );
                     al_add(this, record);
                     cantidadFilasLeidas++;
                 }
@@ -94,7 +98,7 @@ int prod_set_Id(eProducto* this, int dato)
     }
     return 0;
 }
-int prod_set_descrip(eProducto* this, char* dato)
+int prod_set_descrip(eProducto* this, char *dato)
 {
     strcpy(this->descrip,dato);
     return 0;
@@ -113,43 +117,4 @@ int charToint(char* charInt)
     nro = atoi(charInt);
     return nro;
 }
-int prod_buscarId(ArrayList* this, int cod)
-{
-    int retorno=0;
-    int i;
-    eProducto* prod;
-    if(this!=NULL && cod >0)
-    {
-        if(this->isEmpty(this)==0)
-       {
-        retorno=1;
-        prod=this->get(this,i);
-        if(prod !=NULL)
-        {
-            for(i=0;i<this->len(this);i++)
-            {
-            if(prod_get_id(prod)==cod)
-            {
-                retorno=i;
-                break;
-            }//fin if
-            }//fin for
-        }//fin if(prod)
-        }
-    }//fin if(this!)
-    return retorno;
-}
-int prod_mover(ArrayList* this,ArrayList* that,int id)//,char* NOM_ARCH,char* NOM_ARCH2)
-{
-    int retorno=-1;
-    eProducto* prod=NULL;
 
-    if(this!=NULL && that!=NULL && id>0)
-    {
-        retorno=0;
-        prod = this->pop(this, this->indexOf(this, prod));
-        that->add(that,prod);
-    }
-
-
-}
