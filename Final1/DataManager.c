@@ -58,12 +58,13 @@ int data_actualizarArchivo(ArrayList* this,char* nom_archivo)
         if(pArch!=NULL)
         {
             retorno=0;
+       //     fprintf(pArch,"Producto,Descripcion,Cantidad\n");
             for(i=0;i<this->len(this);i++)
             {
                 prod=this->get(this,i);
                 if(prod!=NULL)
                 {
-                    fprintf(pArch,prod_get_id(prod),prod_get_descripcion(prod),prod_get_cantidad(prod));
+                    fprintf(pArch,"%d,%s,%d\n",prod_get_id(prod),prod_get_descripcion(prod),prod_get_cantidad(prod));
                 }//fin if(prod)
                 else
                 {

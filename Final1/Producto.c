@@ -8,7 +8,6 @@
 #define CANTIDAD 3
 
 
-
 int parserProducto(FILE* pFile, ArrayList* this)
 {
     int retorno = -1;
@@ -18,18 +17,13 @@ int parserProducto(FILE* pFile, ArrayList* this)
     int guardoDato;
 
     eProducto* record;
-    char Id[2];
+    char Id[3];
     char descrip[25];
-    char canti[2];
+    char canti[3];
 
     if(pFile != NULL)
     {
         retorno = -2;
-        if(ENCABEZADO == 1)
-        {
-            //descarto la lectura del encabezado
-            fgets(cabecera, 50, pFile);
-        }
 
         while(!feof(pFile))
         {
@@ -37,11 +31,9 @@ int parserProducto(FILE* pFile, ArrayList* this)
             record = nuevo();
             if(record != NULL)
             {
-                cantidadDatosLeidos = fscanf(pFile,"%[^,],%[^,],%[^\n]\n",Id,descrip,canti);
-                if(cantidadDatosLeidos == CANTIDAD)
-                {
-                   guardoDato=prod_set_Id(record,charToint(Id));
-                    if(guardoDato !=0)
+                fscanf(pFile,"%[^,],%[^,],%[^\n]\n",Id,descrip,canti);
+
+                    if(prod_set_Id(record,charToint(Id)))
                     {
                         break;
                     }
@@ -59,12 +51,8 @@ int parserProducto(FILE* pFile, ArrayList* this)
                     al_add(this, record);
                     cantidadFilasLeidas++;
                 }
-                else //Fin de archivo u otro error
-                {
-                    break;
-                }
-            }
-            else //Sin memoria
+
+ else //Sin memoria
             {
                 break;
             }
@@ -72,6 +60,11 @@ int parserProducto(FILE* pFile, ArrayList* this)
     }
     return retorno;
 }
+
+
+
+
+
 //*************Defino los setters y getters
 
 int prod_get_id(eProducto* this)
@@ -147,7 +140,8 @@ int prod_mover(ArrayList* this,ArrayList* that,int id)//,char* NOM_ARCH,char* NO
     if(this!=NULL && that!=NULL && id>0)
     {
         retorno=0;
-        prod = this->pop(this, this->indexOf(this, prod));
+       prod = this->pop(this, this->indexOf(this, prod));
+     //   prod = this->pop(this, id));
         that->add(that,prod);
     }
 

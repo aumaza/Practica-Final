@@ -7,14 +7,14 @@
 
 1531822730 c:\eli\utn\practica finales labi\final1\arraylist.h
 
-1531923716 source:c:\eli\utn\practica finales labi\final1\datamanager.c
+1531934002 source:c:\eli\utn\practica finales labi\final1\datamanager.c
 	<stdio.h>
 	<stdlib.h>
 	"ArrayList.h"
 	"Producto.h"
 	"DataManager.h"
 
-1531921531 source:c:\eli\utn\practica finales labi\final1\producto.c
+1531934052 source:c:\eli\utn\practica finales labi\final1\producto.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -26,7 +26,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1531923864 source:c:\eli\utn\practica finales labi\final1\validaciones.c
+1531933319 source:c:\eli\utn\practica finales labi\final1\validaciones.c
 	<stdio.h>
 	<stdlib.h>
 	"ArrayList.h"
@@ -49,7 +49,7 @@
 	"ArrayList.h"
 	"Controlador.h"
 
-1531921645 source:c:\eli\utn\practica finales labi\final1\main.c
+1531932744 source:c:\eli\utn\practica finales labi\final1\main.c
 	<stdio.h>
 	<stdlib.h>
 	"Controlador.h"

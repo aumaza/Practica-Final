@@ -15,7 +15,7 @@ int main()
     char seguir='S';
     char resp;
     int opcion;
-    int origen,destino,id;
+    int origen,destino,id,codigo;
     eProducto prod;
     ArrayList *ListaDep0;
     ArrayList *ListaDep1;
@@ -62,12 +62,13 @@ int main()
                 case 0:
                     vista_MostrarElementos(ListaDep0,"Productos Deposito Nro 0",0,ListaDep0->len(ListaDep0));
                     system("pause");
-                    opcion=Valida_PedirEntero("Ingrese el codigo del producto a mover\n");
-                    id=prod_buscarId(ListaDep0,opcion);
+                    /*opcion=Valida_PedirEntero("Ingrese el codigo del producto a mover\n");*/
+                    printf("Ingrese codigo de producto a mover: ");
+                    scanf("%d", &codigo);
+                    id=prod_buscarId(ListaDep0,codigo);
+                    system("cls");
                     vista_Muestra1UnElemento(al_get(ListaDep0,id));
-                   // system("pause");
-                    resp=Valida_confirmacion("Desea mover este producto? (S/N)");
-                    //system("pause");
+                    resp=Valida_confirmacion("Desea mover este producto?");
                     if(resp=='S')
                     {
                         prod_mover(ListaDep0,ListaDep1,id);
