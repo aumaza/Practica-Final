@@ -5,6 +5,7 @@
 #include "Vista.h"
 #include "Validaciones.h"
 #include "ArrayList.h"
+#include "Producto.h"
 #define NOM_ARCH "dep0.csv"
 #define NOM_ARCH2 "dep1.csv"
 #define TAMAÑO 5
@@ -13,6 +14,7 @@ int main()
 {
     char seguir='S';
     int opcion;
+    int num_deposito;
    // int retorno=0;
     ArrayList *ListaDep0;
     ArrayList *ListaDep1;
@@ -39,7 +41,8 @@ int main()
                  case 1:
                     if(ListaDep0 !=NULL)
                     {
-                        vista_MostrarElementos(ListaDep0,"Listado productos Deposito 0",0,5);
+                        vista_MostrarElementos(ListaDep0,"Listado productos Deposito 0",0,ListaDep0->len(ListaDep0));
+                        system("pause");
                     }
                     else
                         printf("No hay productos\n");
@@ -47,11 +50,24 @@ int main()
                     break;
                  case 2:
                     vista_MostrarElementos(ListaDep1,"Listado productos Deposito 1",0,ListaDep1->len(ListaDep1));
+                    system("pause");
                     break;
                  }
 
                 break;
             case 3:
+                switch(vista_Pedir_Deposito(num_deposito))
+                {
+                case 0:
+                    prod_BuscarYMover(ListaDep0,ListaDep1);
+                    data_actualizarArchivo(ListaDep0,NOM_ARCH);
+                    break;
+                case 1:
+                    prod_BuscarYMover(ListaDep1,ListaDep1);
+                    data_actualizarArchivo(ListaDep1,NOM_ARCH2);
+
+                    break;
+                }//fin switch
                 break;
             case 4:
                 break;

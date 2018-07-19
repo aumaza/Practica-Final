@@ -6,8 +6,6 @@
 #include "DataManager.h"
 #define ENCABEZADO 0
 #define CANTIDAD 3
-#define UP 0
-#define DOWN 1
 
 
 
@@ -145,8 +143,7 @@ int prod_mover(ArrayList* this,ArrayList* that,int id)
        if(prod!=NULL)
        {
            that->add(that,prod);
-           this->sort(this,prod_comparaProducto,1);
-           that->sort(that,prod_comparaProducto,1);
+           this->sort(this,)
            printf("se movio correctamente\n");
            system("pause");
        }
@@ -177,8 +174,8 @@ int prod_BuscarYMover(ArrayList* this,ArrayList* that)
         if(resp=='S')
         {
             retorno=prod_mover(this,that,id);
-           // printf("retorno: %d",retorno);
-           // system("pause");
+            printf("retorno: %d",retorno);
+            system("pause");
            // retorno=1;
         }//fin if(resp)
         else
@@ -200,11 +197,11 @@ int prod_BuscarYMover(ArrayList* this,ArrayList* that)
 int prod_ComparaNombre(void* eEmpleadoA,void* eEmpleadoB)
 {
     int retorno=-1;
-    if (strcmp(((eProducto*)eEmpleadoA)->descrip,((eProducto*)eEmpleadoB)->descrip)==1)
+    if (strcmp(((eEmpleado*)eEmpleadoA)->nombre,((eEmpleado*)eEmpleadoB)->nombre)==1)
     {
       retorno=1;
     }
-        if (strcmp(((eProducto*)eEmpleadoA)->descrip,((eProducto*)eEmpleadoB)->descrip)==-1)
+        if (strcmp(((eEmpleado*)eEmpleadoA)->nombre,((eEmpleado*)eEmpleadoB)->nombre)==-1)
     {
       retorno=0;
     }
@@ -227,19 +224,19 @@ int prod_comparaProducto(void* eEmpleadoA,void* eEmpleadoB)
 int compara_elementos_Estructura(void* pElementA,void* pElementB)
 {
     int retorno;
-    eProducto *tmp_1;
-    eProducto *tmp_2;
-    tmp_1=(eProducto * ) pElementA;
-    tmp_2=(eProducto * ) pElementB;
+    eEmpleado *tmp_1;
+    eEmpleado *tmp_2;
+    tmp_1=(eEmpleado * ) pElementA;
+    tmp_2=(eEmpleado * ) pElementB;
 
-    if(tmp_1->cod_prod > tmp_2->cod_prod)
+    if(tmp_1->sueldo > tmp_2->sueldo)
     {
         retorno=1;
     }
     else
     {
         retorno=-1;
-        if(tmp_1->cod_prod < tmp_2->cod_prod)
+        if(tmp_1->sueldo < tmp_2->sueldo)
         {
             retorno=0;
         }

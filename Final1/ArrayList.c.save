@@ -245,7 +245,7 @@ int al_remove(ArrayList* this,int index)
      if(contract(this,index)==0)
      {
         this->size--;
-       // resizeDown(this);
+        resizeDown(this);
         returnAux=0;
      }
        /* metrica=this->reservedSize-this->size;
@@ -652,7 +652,6 @@ int contract(ArrayList* this,int index)
           //  this->pElements[i]=this->pElements[i+1];
             al_set(this,i,al_get(this,i+1));
         }
-        resizeDown(this);
         returnAux=0;
 
     }//fin if
