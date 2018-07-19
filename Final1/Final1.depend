@@ -229,7 +229,7 @@
 
 1532005520 c:\eli\utn\practica finales labi\practica-final\practica-final\final1\validaciones.h
 
-1532005741 source:c:\eli\utn\practica finales labi\practica-final\practica-final\final1\main.c
+1532010282 source:c:\eli\utn\practica finales labi\practica-final\practica-final\final1\main.c
 	<stdio.h>
 	<stdlib.h>
 	"DataManager.h"
@@ -243,7 +243,7 @@
 	"ArrayList.h"
 	"Producto.h"
 
-1532007186 source:c:\eli\utn\practica finales labi\practica-final\practica-final\final1\producto.c
+1532012214 source:c:\eli\utn\practica finales labi\practica-final\practica-final\final1\producto.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

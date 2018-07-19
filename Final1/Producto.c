@@ -115,9 +115,11 @@ int prod_buscarId(ArrayList* this, int cod)
         if(this->isEmpty(this)==0)
        {
         retorno=1;
+        printf("entre al buscar:");
+        system("pause");
 
-        if(prod !=NULL)
-        {
+    //    if(prod !=NULL)
+    //    {
             for(i=0;i<this->len(this);i++)
             {
             prod=this->get(this,i);
@@ -126,8 +128,12 @@ int prod_buscarId(ArrayList* this, int cod)
                 retorno=i;
                 break;
             }//fin if
+            else if(prod_get_id(prod)!=cod)
+            {
+                retorno=-1;
+            }
             }//fin for
-        }//fin if(prod)
+//        }//fin if(prod)
         }
     }//fin if(this!)
     return retorno;
@@ -257,12 +263,13 @@ int prod_ManejoDeStock(ArrayList* this, ArrayList* that, int operacion)
     if(this !=NULL && that !=NULL)
     {
         retorno=0;
-        cod_prod=Valida_PedirEntero("Ingrese el codigo del producto\n");
-        if(cod_prod >0)
-        {
-        retorno=1;
+        cod_prod=Valida_PedirEntero("Ingrese el codigo del producto\n");//cambiar a funcion valida_pedirInValido
+  //      if(cod_prod >0)
+     //   {
+      //  retorno=1;
         id=prod_buscarId(this,cod_prod);
         prod=al_get(this,id);
+       // pElement = this->get(this, i);
         if(prod==NULL)
         {
             id=prod_buscarId(that,cod_prod);
@@ -282,9 +289,9 @@ int prod_ManejoDeStock(ArrayList* this, ArrayList* that, int operacion)
             {
                 numero=valida_pedirIntValido("Ingrese la cantidad a agregar:","Debe ingresar una numero valido:",0,100);
             }//fin if(numero)
-            else if(operacion==-1)//resta cantidad
+            else if(operacion <0)//resta cantidad
             {
-                numero=valida_pedirIntValido("Ingrese la cantidad a agregar:","Debe ingresar una numero valido:",0,stock_actual);
+                numero=valida_pedirIntValido("Ingrese la cantidad a descontar:","Debe ingresar una numero valido:",0,stock_actual);
             }
             stock_nuevo=stock_actual+(numero*operacion);
             printf("El stock anterior era %d y el nuevo es: %d",stock_actual,stock_nuevo);
@@ -298,7 +305,7 @@ int prod_ManejoDeStock(ArrayList* this, ArrayList* that, int operacion)
                 printf("Operacion cancelada\n");
             }
         }//fin else
-        }
+//      }
 
     }//if(this)
 return retorno;
