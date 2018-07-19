@@ -50,28 +50,41 @@ int data_actualizarArchivo(ArrayList* this,char* nom_archivo)
     int retorno=-1;
     FILE* pArch;
     eProducto* prod=NULL;
-    int i;
+    int i,cantidad;
 
-    if(nom_archivo!=NULL)
+    if(this !=NULL && nom_archivo!=NULL)
     {
         pArch=fopen(nom_archivo,"w");
-        if(pArch!=NULL)
+        if(pArch==NULL)
         {
             retorno=0;
-       //     fprintf(pArch,"Producto,Descripcion,Cantidad\n");
-            for(i=0;i<this->len(this);i++)
+        }//fin If(pArch==
+            else
             {
-                prod=this->get(this,i);
+       //     fprintf(pArch,"Producto,Descripcion,Cantidad\n");
+            cantidad=this->len(this);
+            for(i=0;i<cantidad;i++)
+            {
+               // prod=this->get(this,i);
+                prod = (eProducto*)al_get(this, i);
                 if(prod!=NULL)
                 {
                     fprintf(pArch,"%d,%s,%d\n",prod_get_id(prod),prod_get_descripcion(prod),prod_get_cantidad(prod));
+                    retorno=1;
                 }//fin if(prod)
-                else
-                {
-                    retorno=-2;
-                }
             }//fin for
-        }//if(pArch)
+        }//else (if pArch==
     }//fin if(nom_archivo)
     fclose(pArch);
+    if(retorno==1)
+        {
+            printf("Se actualizo el archivo: %s correctamente\n",nom_archivo);
+            system("pause");
+        }
+        else
+        {
+            printf("No se pudo actualizar el archivo: %s\n",nom_archivo);
+            system("pause");
+        }
+        return retorno;
 }

@@ -6,7 +6,7 @@
 
 
 void ValidaMenu(int opcion,int limite_inferior,int limite_superior);
-
+int valida_pedirIntValido(char* mensajeIngreso, char* mensajeReingreso, int limiteInferior, int limiteSuperior);
 
 
 

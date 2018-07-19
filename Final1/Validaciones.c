@@ -63,3 +63,14 @@ char Valida_confirmacion(char mensaje[])
    while(retorno != 'S' && retorno != 'N');
    return retorno;
 }
+int valida_pedirIntValido(char* mensajeIngreso, char* mensajeReingreso, int limiteInferior, int limiteSuperior)
+{
+   int retorno;
+   retorno = Valida_PedirEntero(mensajeIngreso);
+
+   while(retorno < limiteInferior || retorno > limiteSuperior)
+   {
+      retorno = Valida_PedirEntero(mensajeReingreso);
+   }
+   return retorno;
+}

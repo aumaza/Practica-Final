@@ -16,7 +16,7 @@ int parserProducto(FILE* pFile, ArrayList* this)
 {
     int retorno = -1;
     int cantidadFilasLeidas = 0;
-    int cantidadDatosLeidos;
+//    int cantidadDatosLeidos;
     char cabecera[50];
     int guardoDato;
     eProducto* record;
@@ -24,7 +24,7 @@ int parserProducto(FILE* pFile, ArrayList* this)
     char descrip[25];
     char canti[3];
 
-    if(pFile != NULL)
+    if(pFile != NULL && this!=NULL)
     {
         retorno = -2;
 
@@ -245,4 +245,62 @@ int compara_elementos_Estructura(void* pElementA,void* pElementB)
         }
     }
     return retorno;
+}
+int prod_ManejoDeStock(ArrayList* this, ArrayList* that, int operacion)
+{
+    int retorno=-1;
+    char resp;
+    int cod_prod,id;
+    int numero,stock_actual,stock_nuevo;
+    eProducto* prod=NULL;
+
+    if(this !=NULL && that !=NULL)
+    {
+        retorno=0;
+        cod_prod=Valida_PedirEntero("Ingrese el codigo del producto\n");
+        if(cod_prod >0)
+        {
+        retorno=1;
+        id=prod_buscarId(this,cod_prod);
+        prod=al_get(this,id);
+        if(prod==NULL)
+        {
+            id=prod_buscarId(that,cod_prod);
+            prod=al_get(that,id);
+        }//fin if(prod==NULL)
+        if(prod==NULL)
+        {
+            retorno=2;
+            printf("No se encontro el producto:\n");
+            system("pause");
+        }//fin 2do if(prod==NULL)
+        else
+        {
+            vista_Muestra1UnElemento(prod);
+            stock_actual=prod_get_cantidad(prod);
+            if(operacion == 1)//Agrega cantidad
+            {
+                numero=valida_pedirIntValido("Ingrese la cantidad a agregar:","Debe ingresar una numero valido:",0,100);
+            }//fin if(numero)
+            else if(operacion==-1)//resta cantidad
+            {
+                numero=valida_pedirIntValido("Ingrese la cantidad a agregar:","Debe ingresar una numero valido:",0,stock_actual);
+            }
+            stock_nuevo=stock_actual+(numero*operacion);
+            printf("El stock anterior era %d y el nuevo es: %d",stock_actual,stock_nuevo);
+            resp=Valida_confirmacion("Confirma la operacion?:");
+            if(resp=='S')
+            {
+                prod=prod_set_cantidad(prod,stock_nuevo);
+            }
+            else
+            {
+                printf("Operacion cancelada\n");
+            }
+        }//fin else
+        }
+
+    }//if(this)
+return retorno;
+
 }
