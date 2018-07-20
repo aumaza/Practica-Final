@@ -4,6 +4,9 @@
 #include "Producto.h"
 #include "DataManager.h"
 #include "Validaciones.h"
+#include "Vista.h"
+#define NOM_ARCH "dep0.csv"
+#define NOM_ARCH2 "dep1.csv"
 
 
 
@@ -87,4 +90,68 @@ int data_actualizarArchivo(ArrayList* this,char* nom_archivo)
             system("pause");
         }
         return retorno;
+}
+int data_borrarProducto(ArrayList* this,ArrayList* that)
+{
+    int retorno=-1;
+    int cod_prod,indice;
+    char resp;
+    eProducto* prod;
+
+    if(this !=NULL && that !=NULL)
+    {
+        retorno=0;
+        cod_prod=Valida_PedirEntero("Ingrese el Codigo del producto a dar de baja:\n");
+        if(cod_prod >0)
+        {
+            indice=prod_buscarId(this,cod_prod);
+            prod=al_get(this,indice);
+            if(prod ==NULL)
+            {
+             indice=prod_buscarId(that,cod_prod);
+             prod=al_get(that,indice);
+             retorno=1;
+            }
+            if(prod ==NULL)
+            {
+                printf("No se encontro el producto\n");
+                vista_pausar();
+            }
+            else if(prod !=NULL)
+            {
+            vista_Muestra1UnElemento(prod);
+            resp=Valida_confirmacion("Confirma dar de baja este producto?");
+            if(resp=='N')
+                {
+                    printf("Operacion cancelada\n");
+                }
+                else if(resp=='S')
+                {
+                 //prod=this->pop(this,this->indexOf(this, prod));
+                 if(retorno==1)
+                 {
+                  prod = that->pop(that, prod);
+                  free(prod);
+                  that->sort(that,prod_comparaProducto,1);
+                  data_actualizarArchivo(that,NOM_ARCH2);
+                 }
+                 else
+                 {
+                    prod = this->pop(that, prod);
+                    free(prod);
+                    this->sort(this,prod_comparaProducto,1);
+                    data_actualizarArchivo(this,NOM_ARCH);
+                 }
+                 retorno=1;
+                }
+            }//fin else prod !=NULL
+
+         }//fin if(cod_prod)
+
+    }//fin if(this)
+    if(retorno==1)
+    {
+        printf("se dio de baja exitosamente:\n");
+    }
+    return retorno;
 }

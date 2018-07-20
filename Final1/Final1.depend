@@ -145,22 +145,25 @@
 
 1531777895 c:\eli\utn\practica finales laboi\finales labo1\practica-final\final1\controlador.h
 
-1531955296 source:c:\eli\utn\practica finales laboi\finales labo1\practica-final\final1\datamanager.c
+1532042393 source:c:\eli\utn\practica finales laboi\finales labo1\practica-final\final1\datamanager.c
 	<stdio.h>
 	<stdlib.h>
 	"ArrayList.h"
 	"Producto.h"
 	"DataManager.h"
 	"Validaciones.h"
+	"Vista.h"
 
-1531962845 c:\eli\utn\practica finales laboi\finales labo1\practica-final\final1\producto.h
+1532031184 c:\eli\utn\practica finales laboi\finales labo1\practica-final\final1\producto.h
 	"ArrayList.h"
 
-1531954657 c:\eli\utn\practica finales laboi\finales labo1\practica-final\final1\datamanager.h
+1532031184 c:\eli\utn\practica finales laboi\finales labo1\practica-final\final1\datamanager.h
+	"ArrayList.h"
 
-1531955296 source:c:\eli\utn\practica finales laboi\finales labo1\practica-final\final1\main.c
+1532044845 source:c:\eli\utn\practica finales laboi\finales labo1\practica-final\final1\main.c
 	<stdio.h>
 	<stdlib.h>
+	"DataManager.h"
 	"Controlador.h"
 	"Vista.h"
 	"Validaciones.h"
@@ -171,9 +174,9 @@
 	"ArrayList.h"
 	"Producto.h"
 
-1531758118 c:\eli\utn\practica finales laboi\finales labo1\practica-final\final1\validaciones.h
+1532031184 c:\eli\utn\practica finales laboi\finales labo1\practica-final\final1\validaciones.h
 
-1531963345 source:c:\eli\utn\practica finales laboi\finales labo1\practica-final\final1\producto.c
+1532044795 source:c:\eli\utn\practica finales laboi\finales labo1\practica-final\final1\producto.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -181,7 +184,7 @@
 	"Producto.h"
 	"DataManager.h"
 
-1531952581 source:c:\eli\utn\practica finales laboi\finales labo1\practica-final\final1\validaciones.c
+1532031184 source:c:\eli\utn\practica finales laboi\finales labo1\practica-final\final1\validaciones.c
 	<stdio.h>
 	<stdlib.h>
 	"ArrayList.h"
@@ -189,13 +192,14 @@
 	"DataManager.h"
 	"Validaciones.h"
 
-1531952581 source:c:\eli\utn\practica finales laboi\finales labo1\practica-final\final1\vista.c
+1532039631 source:c:\eli\utn\practica finales laboi\finales labo1\practica-final\final1\vista.c
 	<stdio.h>
 	<stdlib.h>
 	"ArrayList.h"
 	"Controlador.h"
 	"DataManager.h"
 	"Producto.h"
+	"Validaciones.h"
 
 1531995725 source:c:\eli\utn\practica finales labi\practica-final\practica-final\final1\arraylist.c
 	<stdio.h>

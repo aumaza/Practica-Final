@@ -115,9 +115,6 @@ int prod_buscarId(ArrayList* this, int cod)
         if(this->isEmpty(this)==0)
        {
         retorno=1;
-        printf("entre al buscar:");
-        system("pause");
-
     //    if(prod !=NULL)
     //    {
             for(i=0;i<this->len(this);i++)
@@ -169,24 +166,33 @@ int prod_mover(ArrayList* this,ArrayList* that,int id)
 int prod_BuscarYMover(ArrayList* this,ArrayList* that)
 {
     int retorno=-1;
-    int cod_prod,id;
+    int cod_prod,id,num_deposito;
     char resp;
-
-    vista_MostrarElementos(this,"Productos Deposito Nro 0",0,this->len(this));
-    cod_prod=Valida_PedirEntero("Ingrese el Codigo del producto a mover:\n");
-    if(cod_prod >0)
+    eProducto* prod;
+    switch(vista_Pedir_Deposito(num_deposito))
     {
-        retorno=0;
-        id=prod_buscarId(this,cod_prod);
-        vista_Muestra1UnElemento(al_get(this,id));
-        resp=Valida_confirmacion("Confirma mover este producto?");
-        if(resp=='S')
+    case 0:
+        vista_MostrarElementos(this,"Productos Deposito Nro 0",0,this->len(this));
+        cod_prod=Valida_PedirEntero("Ingrese el Codigo del producto a mover:\n");
+        if(cod_prod >0)
         {
-            retorno=prod_mover(this,that,id);
+            retorno=0;
+            id=prod_buscarId(this,cod_prod);
+            vista_Muestra1UnElemento(al_get(this,id));
+            resp=Valida_confirmacion("Confirma mover este producto del deposito 0 al 1?");
+            if(resp=='S')
+            {
+           // retorno=prod_mover(this,that,id);
+            prod = this->pop(this, id);
+            that->add(that,prod);
+            this->sort(this,prod_comparaProducto,1);
+            that->sort(that,prod_comparaProducto,1);
+            printf("se movio correctamente\n");
+            system("pause");
            // printf("retorno: %d",retorno);
            // system("pause");
            // retorno=1;
-        }//fin if(resp)
+            }//fin if(resp)
         else
         {
             printf("Se cancelo la operacion:\n");
@@ -201,6 +207,46 @@ int prod_BuscarYMover(ArrayList* this,ArrayList* that)
     {
         printf("Se movio correctamente\n");
     }
+    break;
+    case 1:
+        vista_MostrarElementos(that,"Productos Deposito Nro 1",0,that->len(that));
+        cod_prod=Valida_PedirEntero("Ingrese el Codigo del producto a mover:\n");
+        if(cod_prod >0)
+        {
+            retorno=0;
+            id=prod_buscarId(that,cod_prod);
+            vista_Muestra1UnElemento(al_get(that,id));
+            resp=Valida_confirmacion("Confirma mover este producto del deposito 1 al 0?");
+            if(resp=='S')
+            {
+           // retorno=prod_mover(this,that,id);
+            prod = that->pop(that, id);
+            this->add(this,prod);
+            this->sort(this,prod_comparaProducto,1);
+            that->sort(that,prod_comparaProducto,1);
+            printf("se movio correctamente\n");
+            system("pause");
+           // printf("retorno: %d",retorno);
+           // system("pause");
+           // retorno=1;
+            }//fin if(resp)
+        else
+        {
+            printf("Se cancelo la operacion:\n");
+            retorno=2;
+        }
+    }//fin if(cod_prod)
+    else
+    {
+        printf("Error no se encontro el codigo\n");
+    }
+    if(retorno=1)
+    {
+        printf("Se movio correctamente\n");
+    }
+    break;
+    }//fin switch
+
     return retorno;
 }
 int prod_ComparaNombre(void* eEmpleadoA,void* eEmpleadoB)

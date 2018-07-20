@@ -24,9 +24,9 @@ int main()
     {
         while(seguir=='S')
         {
-            ShowMenu("\n1:Cargar Deposito\n2:Listar productos de deposito\n3:Mover productos a deposito\n4:Descontar productos de deposito\n5:Agregar productos a deposito\n");
+            ShowMenu("\n1:Cargar Deposito\n2:Listar productos de deposito\n3:Mover productos a deposito\n4:Descontar productos de deposito\n5:Agregar productos a deposito\n6:Dar de baja productos\n");
             scanf("%d",&opcion);
-            ValidaMenu(opcion,0,5);
+            ValidaMenu(opcion,0,7);
             switch(opcion)
             {
             case 1:
@@ -56,25 +56,20 @@ int main()
 
                 break;
             case 3:
-                switch(vista_Pedir_Deposito(num_deposito))
-                {
-                case 0:
-                    prod_BuscarYMover(ListaDep0,ListaDep1);
-                    data_actualizarArchivo(ListaDep0,NOM_ARCH);
-                    data_actualizarArchivo(ListaDep1,NOM_ARCH2);
-                    break;
-                case 1:
-                    prod_BuscarYMover(ListaDep1,ListaDep1);
-                    data_actualizarArchivo(ListaDep1,NOM_ARCH2);
-                    data_actualizarArchivo(ListaDep0,NOM_ARCH);
-                    break;
-                }//fin switch
-                break;
+               prod_BuscarYMover(ListaDep0,ListaDep1);
+               break;
             case 4:
                 prod_ManejoDeStock(ListaDep0,ListaDep1,-1);
+                data_actualizarArchivo(ListaDep1,NOM_ARCH2);
+                data_actualizarArchivo(ListaDep0,NOM_ARCH);
                 break;
             case 5:
                 prod_ManejoDeStock(ListaDep0,ListaDep1,1);
+                data_actualizarArchivo(ListaDep1,NOM_ARCH2);
+                data_actualizarArchivo(ListaDep0,NOM_ARCH);
+                break;
+            case 6:
+                data_borrarProducto(ListaDep0,ListaDep1);
                 break;
             case 0:
                 seguir='N';

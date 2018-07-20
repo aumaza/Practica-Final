@@ -20,7 +20,10 @@ void vista_ShowTitulo(char titulo[])
 {
     printf("%s----\n\n",titulo);
 }
-
+void vista_pausar()
+{
+    system("pause");
+}
 int vista_Muestra1UnElemento(eProducto * emp)
 {
     int retorno=-1;
