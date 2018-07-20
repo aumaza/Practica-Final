@@ -1,0 +1,90 @@
+# depslib dependency file v1.0
+1530542365 source:c:\test\elifalcon\parcial 2\archivo.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"tools.h"
+	"Empleados.h"
+
+1530531221 c:\test\elifalcon\parcial 2\arraylist.h
+
+1530531221 c:\test\elifalcon\parcial 2\tools.h
+
+1530542898 c:\test\elifalcon\parcial 2\empleados.h
+
+1530537251 source:c:\test\elifalcon\parcial 2\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1530543323 source:c:\test\elifalcon\parcial 2\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"tools.h"
+	"Archivo.h"
+	"Empleados.h"
+
+1530537021 c:\test\elifalcon\parcial 2\archivo.h
+
+1530543369 source:c:\test\elifalcon\parcial 2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"tools.h"
+	"Empleados.h"
+	"Archivos.h"
+
+1530531221 c:\test\elifalcon\parcial 2\archivos.h
+
+1530535026 source:c:\test\elifalcon\parcial 2\tools.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+
+1531690929 source:c:\eli\utn\examen\parcial-nro2\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1530563215 c:\eli\utn\examen\parcial-nro2\arraylist.h
+
+1531606276 source:c:\eli\utn\examen\parcial-nro2\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"tools.h"
+	"Archivo.h"
+	"Empleados.h"
+
+1530563215 c:\eli\utn\examen\parcial-nro2\tools.h
+
+1530973948 c:\eli\utn\examen\parcial-nro2\archivo.h
+	"Empleados.h"
+
+1530994449 c:\eli\utn\examen\parcial-nro2\empleados.h
+
+1530563215 source:c:\eli\utn\examen\parcial-nro2\tools.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+
+1531690948 source:c:\eli\utn\examen\parcial-nro2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"tools.h"
+	"Empleados.h"
+	"Archivo.h"
+
+1530563215 c:\eli\utn\examen\parcial-nro2\archivos.h
+
+1531603923 source:c:\eli\utn\examen\parcial-nro2\archivo.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"tools.h"
+	"Empleados.h"
+
