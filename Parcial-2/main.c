@@ -6,6 +6,7 @@
 #include "Archivo.h"
 #define NOM_ARCHIVO "archivo.csv"
 #define NOM_GUARDAR "sueldo.csv"
+#define NOM_SALARIO "maximo.csv"
 #define MAX 1
 
 #define UP 0
@@ -28,7 +29,7 @@ int main()
 
         while(seguir=='S')
         {
-          ShowMenu("1:Cargar Archivo\n2:Listar Ordenado \n3:Listar\n4:Lista Salario\n5:Guardar Archivo\n6:Salario Maximo\n7:Ordenar por Salario\n8:Alta Empleado\n9:Baja Empleado\n");
+          ShowMenu("1:Cargar Archivo\n2:Listar Ordenado \n3:Listar\n4:Lista Salario\n5:Guardar Archivo\n6:Salarios Mayores a 20000\n");
           scanf("%d",&opcion);
           ValidaMenu(opcion,0,9);
             switch(opcion)
@@ -37,7 +38,7 @@ int main()
                     cargarDesdeArchivo(ListaEmpleados,NOM_ARCHIVO);
                     break;
                 case 2:
-                    ListaAux=ListarPorNombre(ListaEmpleados,0);
+                    ListaAux=ListarPorNombre(ListaEmpleados,1);
                    if(ListaAux !=NULL)
                    {
 
@@ -68,7 +69,7 @@ int main()
                 case 5:
                     GuardarArchivoT(ListaEmpleados,NOM_GUARDAR);
                     break;
-                case 6:
+               /* case 6:
                     emp=BuscaMaximo(ListaEmpleados,comparaEmpleado,1);
                     tools_ShowTitulo("SALARIO MAXIMO");
                     printf("NOMBRE\tDIRECCION\tHORAS\tSALARIO\n\n");
@@ -88,7 +89,20 @@ int main()
                 case 9:
                     arch_borrar(ListaEmpleados);
 
-                    break;
+                    break;*/
+                case 6:
+                    ListaAux=al_filter(ListaAux,funcionFiltro);
+                    if(ListaAux !=NULL)
+                        {
+                         MostrarElementosconSalario(ListaAux,0,ListaAux->len(ListaAux));
+                         GuardarArchivoT(ListaAux,NOM_SALARIO);
+                        }
+                    else
+                    {
+                      printf("no hay salarios que cumplan esa condicion\n");
+                      system("pause");
+                    }
+
                 case 0:
                     seguir='n';
                     break;

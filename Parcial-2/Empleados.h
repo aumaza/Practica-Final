@@ -21,6 +21,7 @@ int CalcularSalary(eEmpleado* element);
 int comparaEmpleado(void* eEmpleadoA,void* eEmpleadoB);
 int compara_elementos_Estructura(void* pElementA,void* pElementB);
 ArrayList* ListarPorSalario(ArrayList *this,int orden);
+int funcionFiltro(void* aux);
 
 
 

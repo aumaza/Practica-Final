@@ -235,5 +235,6 @@ int contract(ArrayList* pList,int index);
 int resizeUp(ArrayList* pList);
 int expand(ArrayList* pList,int index);
 int contract(ArrayList* pList,int index);
+ArrayList* al_filter(ArrayList* this , int (*funcionFiltro)(void*));
 //___________________
 

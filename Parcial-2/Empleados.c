@@ -144,7 +144,7 @@ int Muestra1UnElementoSalario(eEmpleado * emp)
     {
         retorno=0;
       //  printf("%s\t%s\t%d \n",emp->nombre,emp->direccion,emp->sueldo);//agregar geters
-        printf("%s\t%s\t%d\t $ %.2f \n",get_Nombre(emp),get_dire(emp),get_horas(emp), emp->sueldo/*get_sueldo(emp)*/);//agregar geters
+        printf("%s\t%s\t%d\t $ %d \n",get_Nombre(emp),get_dire(emp),get_horas(emp), get_sueldo(emp));//agregar geters
     }
     return retorno;
 }
@@ -408,4 +408,15 @@ int emp_buscarNombre(ArrayList* this, char nom[])
         }
     }//fin if(this!)
     return retorno;
+}
+int funcionFiltro(void* aux)
+{
+    int retorno=0;
+    eEmpleado *emp;
+    emp=(eEmpleado * ) aux;
+    if(get_sueldo(emp) > 20000)
+    {
+        retorno=1;
+    }
+    return retorno ;
 }

@@ -223,3 +223,48 @@
 	"Archivo.h"
 	"Empleados.h"
 
+1532350408 source:c:\test\falcon\practica\practica-final\parcial-2\archivo.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"tools.h"
+	"Empleados.h"
+
+1532349651 c:\test\falcon\practica\practica-final\parcial-2\arraylist.h
+
+1532345395 c:\test\falcon\practica\practica-final\parcial-2\tools.h
+
+1532349214 c:\test\falcon\practica\practica-final\parcial-2\empleados.h
+
+1532349360 source:c:\test\falcon\practica\practica-final\parcial-2\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1532349045 source:c:\test\falcon\practica\practica-final\parcial-2\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"tools.h"
+	"Archivo.h"
+	"Empleados.h"
+
+1532345395 c:\test\falcon\practica\practica-final\parcial-2\archivo.h
+	"Empleados.h"
+
+1532349501 source:c:\test\falcon\practica\practica-final\parcial-2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"tools.h"
+	"Empleados.h"
+	"Archivo.h"
+
+1532345395 source:c:\test\falcon\practica\practica-final\parcial-2\tools.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"Empleados.h"
+	"Archivo.h"
+

@@ -751,3 +751,21 @@ int al_mapp(ArrayList *this, int (*funcion)(void*))
     }
     return retorno;
 }
+ArrayList* al_filter(ArrayList* this , int (*funcionFiltro)(void*))
+{
+    int i;
+    ArrayList *ListaAux=NULL;
+    ListaAux= al_newArrayList();
+
+    if(this!=NULL && funcionFiltro!=NULL && ListaAux!=NULL)
+    {
+        for(i=0;i<this->len(this);i++)
+        {
+                if( funcionFiltro(this->get(this,i) )==1  )
+                {
+                    ListaAux->add(ListaAux,this->get(this,i) );
+                }
+        }
+        return ListaAux;
+    }
+}

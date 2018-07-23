@@ -60,7 +60,7 @@ int get_horas(eEmpleado* this)
     return this->horas;
 }
 
-float get_sueldo(eEmpleado* this)
+int get_sueldo(eEmpleado* this)
 {
     return this->sueldo;
 }
