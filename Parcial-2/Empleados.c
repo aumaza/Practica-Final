@@ -163,7 +163,7 @@ void MostrarElementos(ArrayList *this,char titulo[],int desde, int hasta)
                 Muestra1UnElemento(al_get(this,i));
             }//fin for i
         }
-        system("\npause");
+        system("pause");
     }
 }
 void MostrarElementosId(ArrayList *this,char titulo[],int desde, int hasta)
@@ -245,7 +245,7 @@ int ComparaNombre(void* eEmpleadoA,void* eEmpleadoB)
     }
     else if (strcmp(((eEmpleado*)eEmpleadoA)->nombre,((eEmpleado*)eEmpleadoB)->nombre)==-1)
     {
-      retorno=0;
+      retorno=-1;
 
     }
     return retorno;

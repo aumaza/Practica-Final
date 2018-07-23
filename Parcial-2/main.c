@@ -37,7 +37,7 @@ int main()
                     cargarDesdeArchivo(ListaEmpleados,NOM_ARCHIVO);
                     break;
                 case 2:
-                    ListaAux=ListarPorNombre(ListaEmpleados,1);
+                    ListaAux=ListarPorNombre(ListaEmpleados,0);
                    if(ListaAux !=NULL)
                    {
 

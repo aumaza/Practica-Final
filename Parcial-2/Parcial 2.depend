@@ -178,3 +178,48 @@
 	"Empleados.h"
 	"Archivo.h"
 
+1532294500 source:c:\eli\utn\practica finales laboi\finales labo1\practica-final\parcial-2\archivo.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"tools.h"
+	"Empleados.h"
+
+1530563216 c:\eli\utn\practica finales laboi\finales labo1\practica-final\parcial-2\arraylist.h
+
+1532292491 c:\eli\utn\practica finales laboi\finales labo1\practica-final\parcial-2\tools.h
+
+1532218547 c:\eli\utn\practica finales laboi\finales labo1\practica-final\parcial-2\empleados.h
+
+1531690930 source:c:\eli\utn\practica finales laboi\finales labo1\practica-final\parcial-2\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1532310907 source:c:\eli\utn\practica finales laboi\finales labo1\practica-final\parcial-2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"tools.h"
+	"Empleados.h"
+	"Archivo.h"
+
+1532216045 c:\eli\utn\practica finales laboi\finales labo1\practica-final\parcial-2\archivo.h
+	"Empleados.h"
+
+1532294150 source:c:\eli\utn\practica finales laboi\finales labo1\practica-final\parcial-2\tools.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"Empleados.h"
+	"Archivo.h"
+
+1532310897 source:c:\eli\utn\practica finales laboi\finales labo1\practica-final\parcial-2\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"tools.h"
+	"Archivo.h"
+	"Empleados.h"
+
