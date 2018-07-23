@@ -141,18 +141,19 @@ int Muestra1UnElementoSalario(eEmpleado * emp)
     {
         retorno=0;
       //  printf("%s\t%s\t%d \n",emp->nombre,emp->direccion,emp->sueldo);//agregar geters
-        printf("%s\t%s\t%d\t $ %.2f \n",get_Nombre(emp),get_dire(emp),get_horas(emp), emp->sueldo/*get_sueldo(emp)*/);//agregar geters
+        printf("%s\t%s\t%d\t $ %.2f \n",get_Nombre(emp),get_dire(emp),get_horas(emp),emp->sueldo/*get_sueldo(emp)*/);//agregar geters
     }
     return retorno;
 }
-void MostrarElementos(ArrayList *this,int desde, int hasta)
+void MostrarElementos(ArrayList *this,char titulo[],int desde, int hasta)
 {
     int i;
    // if(this !=NULL && desde>=0 && hasta < this->len(this))
    if(this !=NULL)
     {
         system("cls");
-        printf("\n\n--------LISTADO ORDENADO POR NOMBRE  --------\n");
+        printf("\n\n-----------%s---------------\n",titulo);
+        printf("\n\nNombre\t Direccion\n\n");
         if(this->isEmpty(this)==0)
         {//No esta vacio
             for(i=desde;i<hasta;i++)
@@ -224,7 +225,7 @@ int ComparaNombre(void* eEmpleadoA,void* eEmpleadoB)
     }
     else if (strcmp(((eEmpleado*)eEmpleadoA)->nombre,((eEmpleado*)eEmpleadoB)->nombre)==-1)
     {
-      retorno=0;
+      retorno=-1;
 
     }
     return retorno;

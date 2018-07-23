@@ -47,7 +47,12 @@ int get_horas(eEmpleado* this)
 
 float get_sueldo(eEmpleado* this)
 {
-    return this->sueldo;
+    float retorno;
+    if(this!=NULL)
+    {
+        retorno=this->sueldo;
+    }
+    return retorno;
 }
 eEmpleado* BuscaMaximo(ArrayList* this, int (*pFunc)(void* ,void*),int valor)
 {
@@ -95,7 +100,6 @@ eEmpleado* BuscaMaximo(ArrayList* this, int (*pFunc)(void* ,void*),int valor)
           //  } //fin 2do for
         }//fin 1er for
     }
-
     return emp;
 }
 
@@ -120,9 +124,9 @@ int Empleado_setId(eEmpleado* this, int dato)
 
     return 0;
 }
-int Empleado_setSueldo(eEmpleado* this,int dato)
+int Empleado_setSueldo(eEmpleado* this,int dato)//
 {
-    if(this!=NULL && dato!=NULL)
+    if(this!=NULL)
     {
         this->sueldo=dato;
     }

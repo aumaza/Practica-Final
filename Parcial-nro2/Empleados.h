@@ -14,7 +14,7 @@ typedef struct
 int cargarDesdeArchivo(ArrayList *this,const char* nombre);
 int ComparaNombre(void* eEmpleadoA,void* eEmpleadoB);
 ArrayList* ListarPorNombre(ArrayList *this,int orden);
-void MostrarElementos(ArrayList *this,int desde, int hasta);
+void MostrarElementos(ArrayList *this,char titulo[],int desde, int hasta);
 int CalculaSalario(ArrayList *this);
 int CalcularSalary(eEmpleado* element);
 int comparaEmpleado(void* eEmpleadoA,void* eEmpleadoB);

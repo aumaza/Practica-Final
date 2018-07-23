@@ -28,7 +28,7 @@ int main()
 
         while(seguir=='S')
         {
-          ShowMenu("1:Cargar Archivo\n2:Listar Ordenado \n3:Listar\n4:Lista Salario\n5: Guardar Archivo\n6: Salario Maximo\n7:Ordenar por Salario\n");
+          ShowMenu("1:Cargar Archivo\n2:Listar Ordenado \n3:Listar\n4:Calcula Salario\n5: Guardar Archivo\n6: Salario Maximo\n7:Ordenar por Salario\n");
           scanf("%d",&opcion);
           ValidaMenu(opcion,0,7);
             switch(opcion)
@@ -40,14 +40,14 @@ int main()
                     ListaAux=ListarPorNombre(ListaEmpleados,0);
                    if(ListaAux !=NULL)
                    {
-                       MostrarElementos(ListaAux,0,ListaAux->len(ListaAux));
+                       MostrarElementos(ListaAux,"Ordenador por Nombre",0,ListaAux->len(ListaAux));
                    }
                    else
                     printf("No hay nada para mostrar\n");
                    // system("pause");
                     break;
                 case 3:
-                    MostrarElementos(ListaEmpleados,0,ListaEmpleados->len(ListaEmpleados));
+                    MostrarElementos(ListaEmpleados,"Listado de Empleados",0,ListaEmpleados->len(ListaEmpleados));
                     break;
                 case 4:
                    // ListaAux=al_map(ListaEmpleados, CalcularSalary);
